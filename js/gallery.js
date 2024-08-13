@@ -85,8 +85,14 @@ const createPictureGallery = images
 const gallery = document.querySelector(".gallery");
 gallery.insertAdjacentHTML("beforeend", createPictureGallery);
 
-const link = document.querySelector(".gallery-link");
-link.addEventListener("click", (event) => {
-  event.preventDefault();
+// ============= модальне вікно ==============
+
+gallery.addEventListener("click", (event) => {
+  if (event.target.classList.contains("gallery-image")) {
+    event.preventDefault();
+
+    const originalImg = event.target.dataset.source;
+    const modalWindow = basicLightbox.create(`<img src="${originalImg}">`);
+    modalWindow.show();
+  }
 });
-2;
