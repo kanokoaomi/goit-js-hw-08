@@ -1,0 +1,20 @@
+* {
+    box-sizing: border-box;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    margin: 24px 156px;
+}
+
+.gallery-item {
+    width: calc((100% - 48px) / 3);
+    background-size: cover;
+
+}
